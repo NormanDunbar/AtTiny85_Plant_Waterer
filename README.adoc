@@ -1,0 +1,18 @@
+= AtTiny85\_Plant\_Waterer
+
+This system, for want of a better word, uses an AtTiny85 running at 1MHz, to sleep in power off mode (pulling only about 6 microAmps) until a certain time has gone by. It then checks a digital moisture sensor and if high, turns on a relay to operate a pump to water the plant.
+
+After watering the plant, of checking the sensor, the system goes back to sleep.
+
+You will see a heartbeat flash of the LED every 8 seconds, which is the longest that the system can remain asleep under the Watch Dog Timer (WDT) on the AtTiny.
+
+To get all this low power stuff, I've used my own fork of the LowPower library by RocketScream, amended for AtTiny by FernandoOrtega which you can find at
+https://github.com/NormanDunbar/Low-Power.
+
+The code will actually fit on an AtTiny25 and AtTiny45, but I've only got an AtTiny85, so that's what it uses.
+
+Once I get some more time, I'll convert it to run on Plain AVR C code, rather than Arduino code, and lower the power consumption even further.
+
+There's a circuit diagram and BOM within the code file. It's plain ASCII but you'll understand it!
+
+Enjoy.
